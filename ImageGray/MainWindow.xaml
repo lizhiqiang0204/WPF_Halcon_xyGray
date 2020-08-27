@@ -1,0 +1,36 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ImageGray"
+        xmlns:HalconDotNet="clr-namespace:HalconDotNet;assembly=halcondotnet" x:Class="ImageGray.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="458" Width="940">
+    <Grid ForceCursor="True" >
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="300"/>
+        </Grid.ColumnDefinitions>
+        <HalconDotNet:HWindowControlWPF x:Name="hWindowControl1" HMouseMove="HMouseMove" HMouseWheel="HMouseWheel" HMouseUp="HMouseUp" HMouseDown="HMouseDown"   />
+
+        <StackPanel Grid.Column="1" >
+            <Button Content="加载图片" Click="BtnClickLoadPic" />
+            <Button Content="全屏" Click="BtnClickFull" />
+        </StackPanel>
+
+        <StatusBar Grid.Row="1" Grid.ColumnSpan="2">
+        <StatusBarItem>
+            <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="txbGray"   />
+             </StackPanel>
+        </StatusBarItem>
+    </StatusBar>
+    </Grid>
+
+</Window>
